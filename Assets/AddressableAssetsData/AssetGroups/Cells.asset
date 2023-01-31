@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Cells
+  m_EditorClassIdentifier: 
+  m_GroupName: Cells
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 638aaa5f60deb204bbcac8fd1690ce8e
+  m_SerializeEntries:
+  - m_GUID: c3f204e4e8bb8e34fb30e6ca1d5e9d9e
+    m_Address: Default
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - cells
+  - m_GUID: 9590971250ff61c4b84c7a2e98533f05
+    m_Address: Obstacle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - cells
+  - m_GUID: 0cce6113237efff43beac2482a960c8f
+    m_Address: SpawnPoint
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - cells
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 03f1f0fc4205df145b840ecc1c0333f8, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: aaf5c499e87542543a4daa1048a526c6, type: 2}
+    - {fileID: 11400000, guid: cb95158824d257042b7af47a59626609, type: 2}

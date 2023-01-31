@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: ItemsEffects
+  m_EditorClassIdentifier: 
+  m_GroupName: ItemsEffects
+  m_Data:
+    m_SerializedData: []
+  m_GUID: cedf22deab010644599faacad7644c8f
+  m_SerializeEntries:
+  - m_GUID: e6ad87e80cd305a4381380f382f2da16
+    m_Address: cube_yellow_destroy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2d9ff533124ab2249a6970214772f44f
+    m_Address: cube_red_destroy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ad9175b01d1c9fa46a15d2026fa4d96a
+    m_Address: cube_purple_destroy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6ba7a6ef333a1334d8b83dbd4a79e97e
+    m_Address: cube_orange_destroy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a3fb2294cfaf2da469cf8add292d466e
+    m_Address: cube_green_destroy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1f86e7d20f21b9349ac4e8eef8cf5908
+    m_Address: cube_blue_destroy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 03f1f0fc4205df145b840ecc1c0333f8, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2a941c72e5bfc64408d8c4df91121493, type: 2}
+    - {fileID: 11400000, guid: c58d1f1d611649d4c8c1dc7a7799d032, type: 2}
