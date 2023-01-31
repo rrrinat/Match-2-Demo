@@ -24,6 +24,8 @@ namespace Match2.Partial.Scopes
             
             builder.Register<ItemDestroyPoolCollection>(Lifetime.Scoped);
             
+            builder.Register<GoalsAchievedChecker>(Lifetime.Scoped);
+            
             builder.Register<ItemsMatch>(Lifetime.Scoped);
             builder.Register<ItemsFall>(Lifetime.Scoped);
             

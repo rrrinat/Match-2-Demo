@@ -7,17 +7,18 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.Factories
 {
     public class LevelDestroyingMatchesStateFactory
     {
-        private IFieldFactory fieldFactory;
-        private ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber;
-
+        private readonly IFieldFactory fieldFactory;
+        private readonly ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber;
+        private readonly IPublisher<OnItemDestroyMessage> onItemDestroyPublisher;
         
-        public LevelDestroyingMatchesStateFactory(IFieldFactory fieldFactory, ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber)
+        public LevelDestroyingMatchesStateFactory(IFieldFactory fieldFactory, ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber, IPublisher<OnItemDestroyMessage> onItemDestroyPublisher)
         {
             this.fieldFactory = fieldFactory;
             this.onMatchFoundSubscriber = onMatchFoundSubscriber;
+            this.onItemDestroyPublisher = onItemDestroyPublisher;
         }
         
-        public LevelDestroyingMatchesState Create(LevelStateMachine levelStateMachine) => new LevelDestroyingMatchesState(levelStateMachine, fieldFactory, onMatchFoundSubscriber);
+        public LevelDestroyingMatchesState Create(LevelStateMachine levelStateMachine) => new LevelDestroyingMatchesState(levelStateMachine, fieldFactory, onMatchFoundSubscriber, onItemDestroyPublisher);
 
     }
 }

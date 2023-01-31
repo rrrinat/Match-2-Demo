@@ -21,6 +21,7 @@ namespace Match2.Partial.Installers
             builder.RegisterMessageBroker<SelectLevelFrameMessage>(options);
             builder.RegisterMessageBroker<OnCellClickedMessage>(options);
             builder.RegisterMessageBroker<OnMatchFoundMessage>(options);
+            builder.RegisterMessageBroker<OnItemDestroyMessage>(options);
         }
     }
 }

@@ -11,15 +11,17 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
 {
     public class LevelDestroyingMatchesState : LevelState
     {
-        private IFieldFactory fieldFactory;
+        private readonly IFieldFactory fieldFactory;
         
-        private ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber;
+        private readonly IPublisher<OnItemDestroyMessage> onItemDestroyPublisher;
+        private readonly ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber;
         private IDisposable subscriptions;
         
-        public LevelDestroyingMatchesState(LevelStateMachine levelStateMachine, IFieldFactory fieldFactory, ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber) : base(levelStateMachine)
+        public LevelDestroyingMatchesState(LevelStateMachine levelStateMachine, IFieldFactory fieldFactory, ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber, IPublisher<OnItemDestroyMessage> onItemDestroyPublisher) : base(levelStateMachine)
         {
             this.fieldFactory = fieldFactory;
             this.onMatchFoundSubscriber = onMatchFoundSubscriber;
+            this.onItemDestroyPublisher = onItemDestroyPublisher;
         }
 
         public override void Enter()
@@ -66,7 +68,11 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
             {
                 return;
             }
+
+            var itemData = cell.Child.Data;
             await cell.Child.Destroy();
+            
+            onItemDestroyPublisher.Publish(new OnItemDestroyMessage(itemData));
         }
     }
 }

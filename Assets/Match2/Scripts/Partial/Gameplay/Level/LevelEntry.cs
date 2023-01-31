@@ -8,6 +8,8 @@ namespace Match2.Partial.Gameplay.Level
     public class LevelEntry : IStartable, ITickable, IDisposable
     {
         [Inject] private LevelStateMachine levelStateMachine;
+
+        [Inject] private GoalsAchievedChecker goalsAchievedChecker;
         
         public void Start()
         {
