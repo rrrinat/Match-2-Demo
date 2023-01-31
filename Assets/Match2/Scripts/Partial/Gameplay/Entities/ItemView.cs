@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
@@ -32,12 +33,11 @@ namespace Match2.Partial.Gameplay.Entities
             transform.SetParent(parent.transform);
         }
 
-        public void Hide()
+        public async UniTask Hide()
         {
-            var sequence = DOTween.Sequence();
             var scaleTo = 
                 transform.DOScale(Vector3.zero, 0.1f).SetEase(Ease.OutBack);
-            sequence.Append(scaleTo);
+            await scaleTo.AsyncWaitForCompletion();
         }
 
         public Tween MoveTo(Vector3 position, float duration)

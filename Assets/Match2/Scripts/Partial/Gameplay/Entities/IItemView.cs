@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Match2.Partial.Gameplay.Entities
@@ -10,7 +11,7 @@ namespace Match2.Partial.Gameplay.Entities
         void Initialize(Sprite sprite);
         void SetSortingOrder(int sortingOrder);
         void Decline();
-        void Hide();
+        UniTask Hide();
         Tween MoveTo(Vector3 position, float duration);
     }
 }

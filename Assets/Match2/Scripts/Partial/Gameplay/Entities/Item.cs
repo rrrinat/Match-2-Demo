@@ -109,7 +109,7 @@ namespace Match2.Partial.Gameplay.Entities
                 return;
             }
 
-            view.Hide();
+            //await view.Hide();
             
             await DestroyInternal();
         }
