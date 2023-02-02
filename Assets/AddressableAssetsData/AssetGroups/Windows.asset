@@ -32,6 +32,10 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - windows
+  - m_GUID: 027a8996ceff1d94daa211b9953e032c
+    m_Address: GraphyWindow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 03f1f0fc4205df145b840ecc1c0333f8, type: 2}
   m_SchemaSet:

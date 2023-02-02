@@ -44,7 +44,8 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0",
-    "com.cysharp.messagepipe": "1.7.4"
+    "com.cysharp.messagepipe": "1.7.4",
+    "com.tayx.graphy": "3.0.2"
   },
   "scopedRegistries": [
     {
@@ -54,6 +55,7 @@
         "com.cysharp.messagepipe",
         "com.cysharp.unitask",
         "com.openupm",
+        "com.tayx.graphy",
         "jp.hadashikick.vcontainer"
       ]
     }
