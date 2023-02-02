@@ -22,11 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - windows
-  - m_GUID: d39061a1a42dab84580b76ff0f178e33
-    m_Address: MainMenuWindow
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - windows
   - m_GUID: 3e8eb09594de7c540b3d3d2609808a73
     m_Address: SelectLevelWindow
     m_ReadOnly: 0
@@ -35,7 +30,18 @@ MonoBehaviour:
   - m_GUID: 027a8996ceff1d94daa211b9953e032c
     m_Address: GraphyWindow
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - windows
+  - m_GUID: d39061a1a42dab84580b76ff0f178e33
+    m_Address: MainMenuWindow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - windows
+  - m_GUID: e392e3690055fc54fb9bedee79c9596c
+    m_Address: GameplayHUDWindow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - windows
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 03f1f0fc4205df145b840ecc1c0333f8, type: 2}
   m_SchemaSet:
