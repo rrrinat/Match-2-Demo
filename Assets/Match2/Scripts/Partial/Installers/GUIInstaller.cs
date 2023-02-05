@@ -9,8 +9,8 @@ namespace Match2.Partial.Installers
     {
         public void Install(IContainerBuilder builder)
         {
-            builder.Register<WindowsContainer>(Lifetime.Scoped);
-            builder.Register<WindowPresenter>(Lifetime.Scoped);
+            builder.Register<WindowsContainer>(Lifetime.Singleton);
+            builder.Register<WindowPresenter>(Lifetime.Singleton);
         }
     }
 }
