@@ -1,4 +1,6 @@
-﻿using Match2.Partial.Gameplay.Factories;
+﻿using Match2.Common.UI.Windows;
+using Match2.Partial.Gameplay.Factories;
+using Match2.Partial.UI.Windows;
 using UnityEngine;
 
 namespace Match2.Partial.Gameplay.Level.LevelStates.States
@@ -6,17 +8,21 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
     public class LevelSpawnState : LevelState
     {
         private IFieldFactory fieldFactory;
+        private WindowPresenter windowPresenter;
         
-        public LevelSpawnState(LevelStateMachine levelStateMachine, IFieldFactory fieldFactory) : base(levelStateMachine)
+        public LevelSpawnState(LevelStateMachine levelStateMachine, IFieldFactory fieldFactory, WindowPresenter windowPresenter) : base(levelStateMachine)
         {
             this.fieldFactory = fieldFactory;
+            this.windowPresenter = windowPresenter;
         }
 
-        public override void Enter()
+        public override async void Enter()
         {
             Debug.Log($"LevelSpawnState Enter");
             
             var field = fieldFactory.Create();
+
+            await windowPresenter.ShowAsync<GameplayHUDWindow>();
             
             levelStateMachine.SetState<LevelPlayerActionState>();
         }

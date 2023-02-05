@@ -18,7 +18,11 @@ MonoBehaviour:
   m_GUID: 37e74c7d089dac042a55b8ca9eb473ae
   m_SerializeEntries:
   - m_GUID: 694f5686d94028045add834f56092acc
-    m_Address: SelectLevelFrame
+    m_Address: LevelFrame
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 158c2fbcec364ac44956f2cbf2b5f041
+    m_Address: GoalFrame
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

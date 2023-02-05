@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Match2.Common.UI.Windows;
 using Match2.Partial.Gameplay.GameStates;
-using Match2.Partial.Gameplay.GameStates.States;
 using Match2.Partial.Gameplay.Static;
 using Match2.Partial.Messages;
+using Match2.Partial.UI.Factories;
 using MessagePipe;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -19,6 +19,8 @@ namespace Match2.Partial.UI.Windows
         [Inject] private GameStateMachine gameStateMachine;
         [Inject] private IStaticDataProvider staticDataProvider;
         [Inject] readonly IPublisher<SelectLevelFrameMessage> publisher;
+
+        [Inject] private ILevelFrameFactory levelFrameFactory;
         
         private List<GameObject> levelFrames;
         private List<LevelData> levels;
@@ -35,17 +37,14 @@ namespace Match2.Partial.UI.Windows
         {
             foreach (var levelData in levels)
             {
-                var instance = await Addressables.InstantiateAsync("SelectLevelFrame");
-                var levelFrame = instance.GetComponent<SelectLevelFrame>();
-                levelFrame.Initialize();
-                levelFrame.RectTransform.SetParent(holder);
-                levelFrame.SetLabel(levelData.LevelIndex.ToString());
-
+                var levelFrame = await levelFrameFactory.Create(holder, levelData.LevelIndex);
                 levelFrame.AddListener(() =>
                 {
                     publisher.Publish(new SelectLevelFrameMessage(levelData));
                     Close();
                 });
+                
+                levelFrames.Add(levelFrame.gameObject);
             }
         }
         

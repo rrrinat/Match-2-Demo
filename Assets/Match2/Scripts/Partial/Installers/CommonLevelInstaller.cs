@@ -2,6 +2,7 @@
 using Match2.Partial.Gameplay.Level;
 using Match2.Partial.Gameplay.Utils;
 using Match2.Partial.Gameplay.VFX;
+using Match2.Partial.UI.Factories;
 using VContainer;
 using VContainer.Unity;
 
@@ -22,9 +23,8 @@ namespace Match2.Partial.Installers
             builder.Register<IFieldFactory, FieldFactory>(Lifetime.Scoped);
             
             builder.Register<ItemDestroyPoolCollection>(Lifetime.Scoped);
-            
             builder.Register<GoalsAchievedChecker>(Lifetime.Scoped);
-            
+
             builder.Register<ItemsMatch>(Lifetime.Scoped);
             builder.Register<ItemsFall>(Lifetime.Scoped);
             

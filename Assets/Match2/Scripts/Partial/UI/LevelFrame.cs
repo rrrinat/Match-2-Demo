@@ -1,11 +1,11 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Match2.Partial.UI
 {
-    public class SelectLevelFrame : MonoBehaviour
+    public class LevelFrame : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI label;
 
