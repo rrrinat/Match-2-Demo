@@ -42,6 +42,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - windows
+  - m_GUID: d27c43e9f478c3940b8ac78321f347e7
+    m_Address: CheatsWindow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - windows
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 03f1f0fc4205df145b840ecc1c0333f8, type: 2}
   m_SchemaSet:

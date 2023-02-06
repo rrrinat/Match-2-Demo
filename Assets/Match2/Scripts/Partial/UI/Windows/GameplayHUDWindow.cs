@@ -14,8 +14,16 @@ namespace Match2.Partial.UI.Windows
         [SerializeField] private RectTransform goalsHolder;
         [SerializeField] private TextMeshProUGUI movesText;
 
+        [Inject] private WindowPresenter windowPresenter;
         [Inject] private IGoalFrameFactory goalFrameFactory;
-        
+
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            settingsButton.onClick.AddListener(OnSettingsButton);
+        }
+
         public void SetData(LevelData levelData)
         {
             foreach (var goal in levelData.Goals)
@@ -31,9 +39,9 @@ namespace Match2.Partial.UI.Windows
             movesText.text = number.ToString();
         }
 
-        public void AddGoalFrame(GoalData goalData)
+        private async void OnSettingsButton()
         {
-            
+            await windowPresenter.ShowAsync<CheatsWindow>();
         }
     }
 }
