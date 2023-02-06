@@ -22,9 +22,11 @@ namespace Match2.Partial.UI.Windows
             {
                 goalFrameFactory.Create(goal, goalsHolder);
             }
+            
+            SetMoves(levelData.MovesCount);
         }
         
-        public void SetMoves(int number)
+        private void SetMoves(int number)
         {
             movesText.text = number.ToString();
         }
