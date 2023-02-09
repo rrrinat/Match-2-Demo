@@ -15,8 +15,7 @@ namespace Match2.Common.UI.Windows
         {
             windows = new Dictionary<int, WindowBase>();
             transform = mainCanvas.transform;
-
-            Debug.Log($"<color=red>WindowsContainer Constructor</color>");
+            
             CreateHolder();
         }
         

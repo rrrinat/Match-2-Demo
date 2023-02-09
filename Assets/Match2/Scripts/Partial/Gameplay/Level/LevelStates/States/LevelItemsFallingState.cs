@@ -16,8 +16,6 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
 
         public override async void Enter()
         {
-            Debug.Log($"LevelItemsFallingState Enter");
-            
             await itemsFall.Fall();
 
             levelStateMachine.SetState<LevelPlayerActionState>();

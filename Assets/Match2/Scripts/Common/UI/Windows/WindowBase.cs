@@ -13,8 +13,8 @@ namespace Match2.Common.UI.Windows
         [SerializeField] private RectTransform animatedRectTransform;
         [SerializeField] private FadeTransitionConfig fadeTransitionConfig;
 
-        private WindowPresenter windowPresenter;
-        private WindowsContainer windowsContainer;
+        protected WindowPresenter windowPresenter;
+        protected WindowsContainer windowsContainer;
 
         protected CanvasGroup canvasGroup;
         

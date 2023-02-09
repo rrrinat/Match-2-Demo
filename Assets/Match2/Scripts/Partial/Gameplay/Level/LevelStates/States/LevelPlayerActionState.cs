@@ -28,8 +28,6 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
 
         public override void Enter()
         {
-            Debug.Log($"LevelPlayerActionState Enter");
-
             var bag = DisposableBag.CreateBuilder();
             onCellClickedSubscriber.Subscribe(OnCellClicked).AddTo(bag);
             onMatchFoundSubscriber.Subscribe(OnMatchFound).AddTo(bag);

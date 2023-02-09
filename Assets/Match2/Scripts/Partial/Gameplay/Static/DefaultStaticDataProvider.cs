@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Match2.Common.Property;
 using Match2.Partial.Gameplay.Enums;
 using Match2.Partial.Gameplay.Factories;
 
@@ -49,10 +50,14 @@ namespace Match2.Partial.Gameplay.Static
             var firstGoal = new GoalData
             {
                 ItemData = itemData,
-                Amount = 10
+                Amount = new ObservablePropertyInt(10)
             };
             
-            var goals = new List<GoalData> { firstGoal };
+            var goals = new Dictionary<ItemData, GoalData>()
+            {
+                {itemData, firstGoal}
+            };
+            
             var levelData = new LevelData
             {
                 LevelIndex = 1,
@@ -113,10 +118,14 @@ namespace Match2.Partial.Gameplay.Static
             var firstGoal = new GoalData
             {
                 ItemData = itemData,
-                Amount = 5
+                Amount = new ObservablePropertyInt(5)
             };
             
-            var goals = new List<GoalData> { firstGoal };
+            var goals = new Dictionary<ItemData, GoalData>()
+            {
+                {itemData, firstGoal}
+            };
+            
             var levelData = new LevelData
             {
                 LevelIndex = 2,

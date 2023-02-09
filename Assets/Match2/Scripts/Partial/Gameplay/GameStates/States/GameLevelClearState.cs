@@ -17,7 +17,6 @@ namespace Match2.Partial.Gameplay.GameStates.States
 
         public override void Enter()
         {
-            Debug.Log($"GameLevelClearState Enter");
             levelLoader.Unload();
         }
 

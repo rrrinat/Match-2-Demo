@@ -19,8 +19,6 @@ namespace Match2.Partial.Gameplay.GameStates.States
 
         public override async void Enter()
         {
-            Debug.Log($"GameForwardState Enter");
-
             await windowPresenter.ShowAsync<MainMenuWindow>();
         }
 

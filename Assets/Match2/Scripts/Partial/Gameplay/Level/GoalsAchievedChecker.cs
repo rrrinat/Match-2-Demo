@@ -27,20 +27,19 @@ namespace Match2.Partial.Gameplay.Level
         {
             var itemData = message.ItemData;
             var goals = currentLevelData.Goals;
-            var itemIndex = goals.FindIndex(g => g.ItemData.Equals(itemData));
-            if (itemIndex < 0)
+
+            if (!currentLevelData.TryGetGoalData(itemData, out var goalData))
             {
                 return;
             }
             
-            var goalData = goals[itemIndex];
             if (goalData.Amount <= 0)
             {
                 return;
             }
 
-            goalData.Amount--;
-            goals[itemIndex] = goalData;
+            goalData.Amount.Value--;
+            goals[itemData] = goalData;
             
             Debug.Log(goalData.ToString());
         }

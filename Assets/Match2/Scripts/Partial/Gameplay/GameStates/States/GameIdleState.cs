@@ -14,8 +14,6 @@ namespace Match2.Partial.Gameplay.GameStates.States
 
         public override async void Enter()
         {
-            Debug.Log($"GameIdleState Enter");
-            
             gameStateMachine.SetState<GameForwardState>();
         }
 

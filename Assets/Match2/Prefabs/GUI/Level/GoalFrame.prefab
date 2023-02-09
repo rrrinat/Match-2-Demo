@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 5009938548721241726}
   - component: {fileID: 5009938548721241720}
   - component: {fileID: 5009938548721241721}
-  - component: {fileID: 1431394748559080902}
+  - component: {fileID: 6367541555228444089}
   m_Layer: 5
   m_Name: GoalFrame
   m_TagString: Untagged
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1431394748559080902
+--- !u!114 &6367541555228444089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -315,8 +315,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5009938548721241727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad62979054f4869af29845d0f669dc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 531f5622012648dca9f37e2bc00cb840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentItemData:
+    Type: 0
+    Color: 0
   image: {fileID: 5009938546772257051}
   text: {fileID: 5009938547853277210}

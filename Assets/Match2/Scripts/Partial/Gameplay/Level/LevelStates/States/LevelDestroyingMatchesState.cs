@@ -26,8 +26,6 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
 
         public override void Enter()
         {
-            Debug.Log($"LevelDestroyingMatchesState Enter");
-            
             var bag = DisposableBag.CreateBuilder();
             onMatchFoundSubscriber.Subscribe(OnMatchFound).AddTo(bag);
             subscriptions = bag.Build();

@@ -14,8 +14,6 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
 
         public override void Enter()
         {
-            Debug.Log($"LevelIdleState Enter");
-            
             levelStateMachine.SetState<LevelSpawnState>();
         }
 

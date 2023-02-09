@@ -22,7 +22,7 @@ namespace Match2.Partial.Gameplay.GameStates.States
 
         public override async void Enter()
         {
-            Debug.Log($"GameLevelSpawnState Enter");
+
         }
 
         public override void Update()

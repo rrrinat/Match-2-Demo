@@ -1,9 +1,10 @@
+using System;
 using System.Text;
 using Match2.Partial.Gameplay.Enums;
-using UnityEngine;
 
 namespace Match2.Partial.Gameplay.Static
 {
+    [Serializable]
     public struct ItemData
     {
         public ItemType Type;

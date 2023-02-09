@@ -6,6 +6,6 @@ namespace Match2.Partial.UI.Factories
 {
     public interface IGoalFrameFactory
     {
-        UniTask<SpriteFrame> Create(GoalData data, RectTransform parent);
+        UniTask<GoalFrame> Create(GoalData data, RectTransform parent);
     }
 }

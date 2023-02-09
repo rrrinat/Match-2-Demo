@@ -1,10 +1,10 @@
+using Cysharp.Threading.Tasks;
 using Match2.Common.UI.Windows;
 using Match2.Partial.Gameplay.Static;
 using Match2.Partial.UI.Factories;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using VContainer;
 
 namespace Match2.Partial.UI.Windows
 {
@@ -14,9 +14,6 @@ namespace Match2.Partial.UI.Windows
         [SerializeField] private RectTransform goalsHolder;
         [SerializeField] private TextMeshProUGUI movesText;
 
-        [Inject] private WindowPresenter windowPresenter;
-        [Inject] private IGoalFrameFactory goalFrameFactory;
-
         public override void Initialize()
         {
             base.Initialize();
@@ -24,11 +21,12 @@ namespace Match2.Partial.UI.Windows
             settingsButton.onClick.AddListener(OnSettingsButton);
         }
 
-        public void SetData(LevelData levelData)
+        public void SetData(LevelData levelData, IGoalFrameFactory goalFrameFactory)
         {
-            foreach (var goal in levelData.Goals)
+            var goals = levelData.Goals;
+            foreach (var goalData in goals.Values)
             {
-                goalFrameFactory.Create(goal, goalsHolder);
+                goalFrameFactory.Create(goalData, goalsHolder).Forget();
             }
             
             SetMoves(levelData.MovesCount);

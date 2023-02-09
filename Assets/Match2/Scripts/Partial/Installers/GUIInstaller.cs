@@ -14,7 +14,7 @@ namespace Match2.Partial.Installers
             builder.Register<WindowPresenter>(Lifetime.Singleton);
             
             builder.Register<ILevelFrameFactory, LevelFrameFactory>(Lifetime.Singleton);
-            builder.Register<IGoalFrameFactory, GoalFrameFactory>(Lifetime.Singleton);
+            //builder.Register<IGoalFrameFactory, GoalFrameFactory>(Lifetime.Singleton);
         }
     }
 }
