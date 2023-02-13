@@ -17,6 +17,7 @@ namespace Match2.Partial.Installers
             builder.Register<LevelPlayerActionStateFactory>(Lifetime.Scoped);
             builder.Register<LevelDestroyingMatchesStateFactory>(Lifetime.Scoped);
             builder.Register<LevelItemsFallingStateFactory>(Lifetime.Scoped);
+            builder.Register<LevelCheckForTurnResultStateFactory>(Lifetime.Scoped);
         }
     }
 }

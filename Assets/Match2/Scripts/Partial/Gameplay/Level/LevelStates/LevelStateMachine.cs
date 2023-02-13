@@ -17,6 +17,7 @@ namespace Match2.Partial.Gameplay.Level.LevelStates
         [Inject] private LevelPlayerActionStateFactory levelPlayerActionStateFactory;
         [Inject] private LevelDestroyingMatchesStateFactory levelDestroyingMatchesStateFactory;
         [Inject] private LevelItemsFallingStateFactory levelItemsFallingStateFactory;
+        [Inject] private LevelCheckForTurnResultStateFactory levelCheckForTurnResultStateFactory;
 
         public override void Initialize()
         {
@@ -27,6 +28,7 @@ namespace Match2.Partial.Gameplay.Level.LevelStates
             AddState(levelPlayerActionStateFactory.Create(this));
             AddState(levelDestroyingMatchesStateFactory.Create(this));
             AddState(levelItemsFallingStateFactory.Create(this));
+            AddState(levelCheckForTurnResultStateFactory.Create(this));
 
             base.Initialize(idleState);
         }

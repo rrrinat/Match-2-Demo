@@ -18,7 +18,7 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
         {
             await itemsFall.Fall();
 
-            levelStateMachine.SetState<LevelPlayerActionState>();
+            levelStateMachine.SetState<LevelCheckForTurnResultState>();
         }
         
         public override void Update()

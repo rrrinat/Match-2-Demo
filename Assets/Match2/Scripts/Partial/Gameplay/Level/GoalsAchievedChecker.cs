@@ -46,8 +46,6 @@ namespace Match2.Partial.Gameplay.Level
                 Dispose();
                 
             }
-            
-            Debug.Log(goalData.ToString());
         }
 
         public void Dispose()

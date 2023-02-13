@@ -22,7 +22,7 @@ namespace Match2.Partial.Installers
             builder.RegisterMessageBroker<OnCellClickedMessage>(options);
             builder.RegisterMessageBroker<OnMatchFoundMessage>(options);
             builder.RegisterMessageBroker<OnItemDestroyMessage>(options);
-            builder.RegisterMessageBroker<AfterDestroyMatchMessage>(options);
+            builder.RegisterMessageBroker<CheckForTurnResultMessage>(options);
         }
     }
 }

@@ -2,28 +2,27 @@ using System;
 using Match2.Partial.Gameplay.Static;
 using Match2.Partial.Messages;
 using MessagePipe;
-using UnityEngine;
 
 namespace Match2.Partial.Gameplay.Level
 {
     public class LimitedMovesGameOverChecker : IDisposable
     {
         private LevelData currentLevelData;
-        private readonly ISubscriber<AfterDestroyMatchMessage> onAfterDestroyMatchSubscriber;
+        private readonly ISubscriber<CheckForTurnResultMessage> onCheckForTurnResultSubscriber;
 
         private IDisposable subscriptions;
         
-        public LimitedMovesGameOverChecker(LevelData levelData, ISubscriber<AfterDestroyMatchMessage> onAfterDestroyMatchSubscriber)
+        public LimitedMovesGameOverChecker(LevelData levelData, ISubscriber<CheckForTurnResultMessage> onCheckForTurnResultSubscriber)
         {
             this.currentLevelData = levelData;
-            this.onAfterDestroyMatchSubscriber = onAfterDestroyMatchSubscriber;
+            this.onCheckForTurnResultSubscriber = onCheckForTurnResultSubscriber;
 
             var bag = DisposableBag.CreateBuilder();
-            onAfterDestroyMatchSubscriber.Subscribe(OnAfterDestroyMatch).AddTo(bag);
+            onCheckForTurnResultSubscriber.Subscribe(OnCheckForTurnResult).AddTo(bag);
             subscriptions = bag.Build();
         }
         
-        private void OnAfterDestroyMatch(AfterDestroyMatchMessage message)
+        private void OnCheckForTurnResult(CheckForTurnResultMessage message)
         {
             currentLevelData.MovesCount.Value--;
 
