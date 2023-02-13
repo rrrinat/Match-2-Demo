@@ -11,7 +11,7 @@ namespace Match2.Partial.UI
         [SerializeField] private Image image;
         [SerializeField] private TextMeshProUGUI text;
         
-        private ObservablePropertyInt currentCurrencyProperty;
+        private ObservablePropertyInt currentAmountProperty;
 
         private GoalData currentGoalData;
         
@@ -40,13 +40,13 @@ namespace Match2.Partial.UI
 
         private void SubscribeToProperty()
         {
-            currentCurrencyProperty = currentGoalData.Amount;
+            currentAmountProperty = currentGoalData.Amount;
             
-            currentCurrencyProperty.AddListener(OnPropertyChange);
-            OnPropertyChange(0, currentCurrencyProperty.Value);
+            currentAmountProperty.AddListener(OnPropertyChange);
+            OnPropertyChange(0, currentAmountProperty.Value);
         }
 
-        private void UnsubscribeFromProperty() => currentCurrencyProperty?.RemoveListener(OnPropertyChange);
+        private void UnsubscribeFromProperty() => currentAmountProperty?.RemoveListener(OnPropertyChange);
 
         protected virtual void OnPropertyChange(int from, int to)
         {

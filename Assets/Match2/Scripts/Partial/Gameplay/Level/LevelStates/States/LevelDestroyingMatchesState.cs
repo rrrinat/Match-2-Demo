@@ -14,13 +14,15 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
         private readonly IFieldFactory fieldFactory;
         
         private readonly IPublisher<OnItemDestroyMessage> onItemDestroyPublisher;
+        private readonly IPublisher<AfterDestroyMatchMessage> onAfterDestroyMatchPublisher;
         private readonly ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber;
         private IDisposable subscriptions;
         
-        public LevelDestroyingMatchesState(LevelStateMachine levelStateMachine, IFieldFactory fieldFactory, ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber, IPublisher<OnItemDestroyMessage> onItemDestroyPublisher) : base(levelStateMachine)
+        public LevelDestroyingMatchesState(LevelStateMachine levelStateMachine, IFieldFactory fieldFactory, ISubscriber<OnMatchFoundMessage> onMatchFoundSubscriber, IPublisher<AfterDestroyMatchMessage> onAfterDestroyMatchPublisher, IPublisher<OnItemDestroyMessage> onItemDestroyPublisher) : base(levelStateMachine)
         {
             this.fieldFactory = fieldFactory;
             this.onMatchFoundSubscriber = onMatchFoundSubscriber;
+            this.onAfterDestroyMatchPublisher = onAfterDestroyMatchPublisher;
             this.onItemDestroyPublisher = onItemDestroyPublisher;
         }
 
@@ -58,6 +60,7 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
             {
                 await Destroy(cell);
             }
+            onAfterDestroyMatchPublisher.Publish(new AfterDestroyMatchMessage());
         }
         
         private async UniTask Destroy(ICell cell)

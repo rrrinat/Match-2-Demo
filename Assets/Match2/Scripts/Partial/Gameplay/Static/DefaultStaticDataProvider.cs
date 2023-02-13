@@ -61,7 +61,7 @@ namespace Match2.Partial.Gameplay.Static
             var levelData = new LevelData
             {
                 LevelIndex = 1,
-                MovesCount = 20,
+                MovesCount = new ObservablePropertyInt(20),
                 Goals = goals,
                 CellsData = temporaryCellsData,
                 ItemsData = temporaryItemsData,
@@ -129,7 +129,7 @@ namespace Match2.Partial.Gameplay.Static
             var levelData = new LevelData
             {
                 LevelIndex = 2,
-                MovesCount = 20,
+                MovesCount = new ObservablePropertyInt(20),
                 Goals = goals,
                 CellsData = temporaryCellsData,
                 ItemsData = temporaryItemsData,

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Match2.Common.Property;
 using Match2.Partial.Gameplay.Enums;
 
 namespace Match2.Partial.Gameplay.Static
@@ -7,7 +8,7 @@ namespace Match2.Partial.Gameplay.Static
     {
         public int CellSize = 1;
         public int LevelIndex;
-        public int MovesCount;
+        public ObservablePropertyInt MovesCount;
         public Dictionary<ItemData, GoalData> Goals;
         public CellType[,] CellsData;
         public ItemData[,] ItemsData;
