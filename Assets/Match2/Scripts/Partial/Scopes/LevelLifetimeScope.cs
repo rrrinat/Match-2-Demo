@@ -26,6 +26,9 @@ namespace Match2.Partial.Scopes
 
             builder.Register<ItemDestroyPoolCollection>(Lifetime.Scoped);
             
+            builder.Register<GoalsAmountCounter>(Lifetime.Scoped);
+            builder.Register<PlayerMovesCounter>(Lifetime.Scoped);
+            
             builder.Register<GoalsAchievedChecker>(Lifetime.Scoped);
             builder.Register<LimitedMovesGameOverChecker>(Lifetime.Scoped);
             

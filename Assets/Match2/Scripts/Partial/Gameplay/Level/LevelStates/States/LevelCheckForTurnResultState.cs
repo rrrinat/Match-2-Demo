@@ -1,7 +1,7 @@
 ﻿using Match2.Partial.Gameplay.Factories;
-using Match2.Partial.Gameplay.Static;
 using Match2.Partial.Messages;
 using MessagePipe;
+using UnityEngine;
 
 namespace Match2.Partial.Gameplay.Level.LevelStates.States
 {
@@ -9,27 +9,43 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
     {
         private IFieldFactory fieldFactory;
         private readonly IPublisher<CheckForTurnResultMessage> onCheckForTurnResultPublisher;
+        private GoalsAchievedChecker goalsAchievedChecker;
+        private LimitedMovesGameOverChecker limitedMovesGameOverChecker;
 
-        public LevelCheckForTurnResultState(LevelStateMachine levelStateMachine, IFieldFactory fieldFactory, IPublisher<CheckForTurnResultMessage> onCheckForTurnResultPublisher) : base(levelStateMachine)
+        public LevelCheckForTurnResultState(LevelStateMachine levelStateMachine, IFieldFactory fieldFactory,
+            IPublisher<CheckForTurnResultMessage> onCheckForTurnResultPublisher,
+            GoalsAchievedChecker goalsAchievedChecker, LimitedMovesGameOverChecker limitedMovesGameOverChecker) : base(
+            levelStateMachine)
         {
             this.fieldFactory = fieldFactory;
             this.onCheckForTurnResultPublisher = onCheckForTurnResultPublisher;
+            this.goalsAchievedChecker = goalsAchievedChecker;
+            this.limitedMovesGameOverChecker = limitedMovesGameOverChecker;
         }
 
         public override void Enter()
         {
             onCheckForTurnResultPublisher.Publish(new CheckForTurnResultMessage());
-            //levelStateMachine.SetState<LevelPlayerActionState>();
+
+            if (goalsAchievedChecker.IsGoalsAchieved())
+            {
+                Debug.Log($"Goals Achieved!");
+            }
+
+            if (limitedMovesGameOverChecker.IsMovesOver())
+            {
+                Debug.Log($"Moves Over!");
+            }
+            
+            levelStateMachine.SetState<LevelPlayerActionState>();
         }
 
         public override void Update()
         {
-
         }
 
         public override void Exit()
         {
-
         }
     }
 }

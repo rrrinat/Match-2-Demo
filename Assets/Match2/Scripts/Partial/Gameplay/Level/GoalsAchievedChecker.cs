@@ -1,56 +1,23 @@
-using System;
-using System.Linq;
+﻿using System.Linq;
 using Match2.Partial.Gameplay.Static;
-using Match2.Partial.Messages;
-using MessagePipe;
-using UnityEngine;
 
 namespace Match2.Partial.Gameplay.Level
 {
-    public class GoalsAchievedChecker : IDisposable
+    public class GoalsAchievedChecker
     {
-        private LevelData currentLevelData; 
-        private readonly ISubscriber<OnItemDestroyMessage> onItemDestroySubscriber;
-        private IDisposable subscriptions;
-        
-        public GoalsAchievedChecker(LevelData levelData, ISubscriber<OnItemDestroyMessage> onItemDestroySubscriber)
+        private LevelData currentLevelData;
+
+        public GoalsAchievedChecker(LevelData currentLevelData)
         {
-            this.currentLevelData = levelData;
-            this.onItemDestroySubscriber = onItemDestroySubscriber;
-            
-            var bag = DisposableBag.CreateBuilder();
-            onItemDestroySubscriber.Subscribe(OnItemDestroy).AddTo(bag);
-            subscriptions = bag.Build();
+            this.currentLevelData = currentLevelData;
         }
-        private void OnItemDestroy(OnItemDestroyMessage message)
+
+        public bool IsGoalsAchieved()
         {
-            var itemData = message.ItemData;
             var goals = currentLevelData.Goals;
-
-            if (!currentLevelData.TryGetGoalData(itemData, out var goalData))
-            {
-                return;
-            }
-            
-            if (goalData.Amount <= 0)
-            {
-                return;
-            }
-
-            goalData.Amount.Value--;
-            goals[itemData] = goalData;
-
             var allItemsDestroyed = goals.Values.All(i => i.Amount <= 0);
-            if (allItemsDestroyed)
-            {
-                Dispose();
-                
-            }
-        }
 
-        public void Dispose()
-        {
-            subscriptions?.Dispose();
+            return allItemsDestroyed;
         }
     }
 }

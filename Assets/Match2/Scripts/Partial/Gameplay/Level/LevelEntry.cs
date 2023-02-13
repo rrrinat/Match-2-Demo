@@ -12,8 +12,8 @@ namespace Match2.Partial.Gameplay.Level
     {
         [Inject] private LevelStateMachine levelStateMachine;
 
-        [Inject] private GoalsAchievedChecker goalsAchievedChecker;
-        [Inject] private LimitedMovesGameOverChecker limitedMovesGameOverChecker;
+        [Inject] private GoalsAmountCounter goalsAmountCounter;
+        [Inject] private PlayerMovesCounter playerMovesCounter;
         
         public void Start()
         {

@@ -1,40 +1,19 @@
-using System;
-using Match2.Partial.Gameplay.Static;
-using Match2.Partial.Messages;
-using MessagePipe;
+﻿using Match2.Partial.Gameplay.Static;
 
 namespace Match2.Partial.Gameplay.Level
 {
-    public class LimitedMovesGameOverChecker : IDisposable
+    public class LimitedMovesGameOverChecker
     {
         private LevelData currentLevelData;
-        private readonly ISubscriber<CheckForTurnResultMessage> onCheckForTurnResultSubscriber;
 
-        private IDisposable subscriptions;
-        
-        public LimitedMovesGameOverChecker(LevelData levelData, ISubscriber<CheckForTurnResultMessage> onCheckForTurnResultSubscriber)
+        public LimitedMovesGameOverChecker(LevelData currentLevelData)
         {
-            this.currentLevelData = levelData;
-            this.onCheckForTurnResultSubscriber = onCheckForTurnResultSubscriber;
-
-            var bag = DisposableBag.CreateBuilder();
-            onCheckForTurnResultSubscriber.Subscribe(OnCheckForTurnResult).AddTo(bag);
-            subscriptions = bag.Build();
-        }
-        
-        private void OnCheckForTurnResult(CheckForTurnResultMessage message)
-        {
-            currentLevelData.MovesCount.Value--;
-
-            if (currentLevelData.MovesCount <= 0)
-            {
-                Dispose();
-            }        
+            this.currentLevelData = currentLevelData;
         }
 
-        public void Dispose()
+        public bool IsMovesOver()
         {
-            subscriptions?.Dispose();
+            return currentLevelData.MovesCount <= 0;
         }
     }
 }
