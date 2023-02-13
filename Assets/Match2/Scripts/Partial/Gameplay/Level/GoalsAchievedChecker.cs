@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Match2.Partial.Gameplay.Static;
 using Match2.Partial.Messages;
 using MessagePipe;
@@ -20,8 +21,6 @@ namespace Match2.Partial.Gameplay.Level
             var bag = DisposableBag.CreateBuilder();
             onItemDestroySubscriber.Subscribe(OnItemDestroy).AddTo(bag);
             subscriptions = bag.Build();
-            
-            
         }
         private void OnItemDestroy(OnItemDestroyMessage message)
         {
@@ -40,6 +39,13 @@ namespace Match2.Partial.Gameplay.Level
 
             goalData.Amount.Value--;
             goals[itemData] = goalData;
+
+            var allItemsDestroyed = goals.Values.All(i => i.Amount <= 0);
+            if (allItemsDestroyed)
+            {
+                Dispose();
+                
+            }
             
             Debug.Log(goalData.ToString());
         }
