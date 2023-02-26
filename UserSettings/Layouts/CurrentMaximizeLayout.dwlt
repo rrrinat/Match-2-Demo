@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 1392
+  controlID: 17157
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1080, y: 1920}
+  m_TargetSize: {x: 219, y: 388.99997}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 08000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 0800000000000000000000000d000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 1351
+  controlID: 17110
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -395,9 +395,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -130.98454, y: 978.94916, z: -1.4213433}
+    m_Target: {x: 85.16667, y: 194.49998, z: 0}
     speed: 2
-    m_Value: {x: -130.98454, y: 978.94916, z: -1.4213433}
+    m_Value: {x: 85.16667, y: 194.49998, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -448,9 +448,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1162.6606
+    m_Target: 28.677101
     speed: 2
-    m_Value: 1162.6606
+    m_Value: 28.677101
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 1393
+  controlID: 17158
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -613,7 +613,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 36fbffff
+      m_ExpandedIDs: fe8effff048fffff188fffffca8fffff9292ffff9892ffffac92ffff5e93ffff889cffff8e9cffffa29cffff549dffff8aa0ffff9ea0ffff50a1ffffd6a5ffffeaa5ffff9ca6fffffea8ffff12a9ffffc4a9ffff4eafffff62afffff14b0ffff1eb5ffff32b5ffffe4b5ffffccb8ffffe0b8ffff92b9ffff40ecffff54ecffff06edffff90f8ffffa4f8ffff58f9ffff18faffff30fbfffff4ffffffea620000f06200000063000014630000446600004a6600005a6600006e6600009e6b0000a46b0000b46b0000c86b0000be6c0000c46c0000d46c0000e86c0000f06d0000f66d0000066e00001a6e0000266f00002c6f00003c6f0000506f0000f26f0000f86f0000087000001c7000002071000026710000367100004a710000ce710000d4710000e4710000f8710000f6730000fc7300000c74000020740000b6740000bc740000cc740000e0740000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -703,21 +703,22 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/Match2/Prefabs/GUI/Level
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\work\unity\temp\Match-2-Demo
+  m_LastProjectPath: C:\work\unity\own\Match-2-Demo-android
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 86270200
     m_LastClickedID: 141190
-    m_ExpandedIDs: ffffffff0000000036620000386200003a6200003c6200003e62000040620000426200004462000046620000486200004a6200004c6200004e62000050620000526200005462000056620000586200005a6200005c6200005e62000060620000626200006462000066620000686200006a6200006c6200006e62000070620000726200007462000076620000786200007a620000
+    m_ExpandedIDs: ffffffff0000000028620000786200007a620000846200008c6200008e62000090620000186400001a6400001c64000096660000986600009a6600009c6600009e660000446e00002072000022720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -742,10 +743,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 933.80005}
+    scrollPos: {x: 0, y: 157.80005}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff0000000036620000386200003a6200003c6200003e62000040620000426200004462000046620000486200004a6200004c6200004e62000050620000526200005462000056620000586200005a6200005c6200005e62000060620000626200006462000066620000686200006a6200006c6200006e62000070620000726200007462000076620000786200007a620000
+    m_ExpandedIDs: ffffffff0000000028620000786200007a620000846200008c6200008e62000090620000186400001a6400001c64000096660000986600009a6600009c6600009e660000446e00002072000022720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

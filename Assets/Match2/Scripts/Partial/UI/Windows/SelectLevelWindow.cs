@@ -25,14 +25,31 @@ namespace Match2.Partial.UI.Windows
         private List<GameObject> levelFrames;
         private List<LevelData> levels;
 
-        public void Initialize()
+        public override void Initialize()
         {
+            base.Initialize();
+            
             levels = staticDataProvider.Levels;
             levelFrames = new List<GameObject>(levels.Count);
 
             FillFrames().Forget();
         }
 
+        // private async UniTaskVoid FillFrames()
+        // {
+        //     foreach (var levelData in levels)
+        //     {
+        //         var levelFrame = await levelFrameFactory.Create(holder, levelData.LevelIndex);
+        //         levelFrame.AddListener(() =>
+        //         {
+        //             publisher.Publish(new SelectLevelFrameMessage(levelData));
+        //             Close();
+        //         });
+        //         
+        //         levelFrames.Add(levelFrame.gameObject);
+        //     }
+        // }
+        
         private async UniTaskVoid FillFrames()
         {
             foreach (var levelData in levels)
@@ -43,10 +60,10 @@ namespace Match2.Partial.UI.Windows
                     publisher.Publish(new SelectLevelFrameMessage(levelData));
                     Close();
                 });
-                
+                levelFrame.RectTransform.localScale = Vector3.one;
                 levelFrames.Add(levelFrame.gameObject);
             }
-        }
+        }        
         
         public override void OnDestroy()
         {

@@ -29,8 +29,7 @@ namespace Match2.Partial.Gameplay.GameStates.States
 
         public override async void Enter()
         {
-            var selectLevelWindow = await windowPresenter.ShowAsync<SelectLevelWindow>();
-            selectLevelWindow.Initialize();
+            await windowPresenter.ShowAsync<SelectLevelWindow>();
 
             var bag = DisposableBag.CreateBuilder(); // composite disposable for manage subscription
             subscriber.Subscribe(MessageHandler).AddTo(bag);
