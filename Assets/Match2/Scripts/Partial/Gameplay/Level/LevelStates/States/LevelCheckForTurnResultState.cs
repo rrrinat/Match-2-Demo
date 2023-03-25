@@ -30,11 +30,15 @@ namespace Match2.Partial.Gameplay.Level.LevelStates.States
             if (goalsAchievedChecker.IsGoalsAchieved())
             {
                 Debug.Log($"Goals Achieved!");
+
+                return;
             }
 
             if (limitedMovesGameOverChecker.IsMovesOver())
             {
                 Debug.Log($"Moves Over!");
+
+                return;
             }
             
             levelStateMachine.SetState<LevelPlayerActionState>();
